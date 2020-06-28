@@ -23,5 +23,8 @@
       "node_modules/*"
     ],
     "ext": "js"
+  },
+  "dependencies": {
+    "@google-cloud/debug-agent": "^5.1.0"
   }
 }

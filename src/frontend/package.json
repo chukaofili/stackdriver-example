@@ -15,5 +15,8 @@
     "moment": "2.26.0",
     "nodemon": "^2.0.4",
     "pug": "3.0.0"
+  },
+  "dependencies": {
+    "@google-cloud/debug-agent": "^5.1.0"
   }
 }
