@@ -1,6 +1,7 @@
 const enviroment = process.env.NODE_ENV;
 const { version, name } = require('./package.json');
 require('@google-cloud/debug-agent').start({
+  allowExpressions: true,
   serviceContext: {
     service: `${name}-${enviroment}`,
     version: version
