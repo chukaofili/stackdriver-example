@@ -1,6 +1,6 @@
 {
   "name": "stackdriver-backend",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "stackdriver backend",
   "main": "app.js",
   "scripts": {
@@ -25,6 +25,7 @@
     "ext": "js"
   },
   "dependencies": {
-    "@google-cloud/debug-agent": "^5.1.0"
+    "@google-cloud/debug-agent": "^5.1.0",
+    "@google-cloud/trace-agent": "^5.1.0"
   }
 }

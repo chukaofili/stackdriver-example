@@ -8,6 +8,15 @@ require('@google-cloud/debug-agent').start({
   }
 });
 
+require('@google-cloud/trace-agent').start({
+  enhancedDatabaseReporting: true,
+  ignoreMethods: ['options'],
+  serviceContext: {
+    service: `${name}-${enviroment}`,
+    version: version
+  }
+});
+
 const express = require('express')
 const path = require('path');
 const app = express();

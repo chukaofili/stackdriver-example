@@ -1,6 +1,6 @@
 {
   "name": "stackdriver-frontend",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "stackdriver frontend",
   "main": "app.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "pug": "3.0.0"
   },
   "dependencies": {
-    "@google-cloud/debug-agent": "^5.1.0"
+    "@google-cloud/debug-agent": "^5.1.0",
+    "@google-cloud/trace-agent": "^5.1.0"
   }
 }
