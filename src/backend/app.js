@@ -1,3 +1,12 @@
+const enviroment = process.env.NODE_ENV;
+const { version, name } = require('./package.json');
+require('@google-cloud/debug-agent').start({
+  serviceContext: {
+    service: `${name}-${enviroment}`,
+    version: version
+  }
+});
+
 const express = require('express')
 const app = express()
 const routes = require('./routes')
@@ -7,13 +16,13 @@ const messages = require('./routes/messages')
 app.use('/', routes)
 
 // Application will fail if environment variables are not set
-if(!process.env.PORT) {
+if (!process.env.PORT) {
   const errMsg = "PORT environment variable is not defined"
   console.error(errMsg)
   throw new Error(errMsg)
 }
 
-if(!process.env.GUESTBOOK_DB_ADDR) {
+if (!process.env.GUESTBOOK_DB_ADDR) {
   const errMsg = "GUESTBOOK_DB_ADDR environment variable is not defined"
   console.error(errMsg)
   throw new Error(errMsg)

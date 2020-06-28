@@ -1,3 +1,12 @@
+const enviroment = process.env.NODE_ENV;
+const { version, name } = require('./package.json');
+require('@google-cloud/debug-agent').start({
+  serviceContext: {
+    service: `${name}-${enviroment}`,
+    version: version
+  }
+});
+
 const express = require('express')
 const path = require('path');
 const app = express();
