@@ -1,10 +1,10 @@
 {
-  "name": "backend",
+  "name": "stackdriver-backend",
   "version": "1.0.0",
-  "description": "backend",
+  "description": "stackdriver backend",
   "main": "app.js",
   "scripts": {
-    "start": "node --inspect=9229 app.js"
+    "debug": "node --inspect=9229 app.js"
   },
   "author": "Chuka Ofili",
   "license": "0BSD",

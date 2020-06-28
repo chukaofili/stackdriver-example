@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: nodejs-guestbook
+    app: stackdriver-example
     tier: db
-  name: nodejs-guestbook-mongodb
+  name: stackdriver-example-mongodb
 spec:
   ports:
     - port: 27017
       targetPort: 27017
   selector:
-    app: nodejs-guestbook
+    app: stackdriver-example
     tier: db

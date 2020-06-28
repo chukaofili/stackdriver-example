@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-guestbook",
+  "name": "stackdriver-example",
   "version": "1.0.0",
   "description": "Guestbook Application for Kubernetes",
   "dependencies": {

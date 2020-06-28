@@ -1,10 +1,10 @@
 {
-  "name": "frontend",
+  "name": "stackdriver-frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "stackdriver frontend",
   "main": "app.js",
   "scripts": {
-    "start": "node --inspect=9229 app.js "
+    "debug": "node --inspect=9229 app.js "
   },
   "author": "Chuka Ofili",
   "license": "0BSD",

@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  labels:
+    app: stackdriver-example
+    tier: backend
+  name: stackdriver-example
+spec:
+  rules:
+  - host: guestbook-be.learn.chuka.dev
+    http:
+      paths:
+      - backend:
+          serviceName: stackdriver-example-backend
+          servicePort: 8080
+        path: /
+  # tls:
+  # - hosts:
+  #   - guestbook-be.learn.chuka.dev
+  #   secretName: guestbook-be-learn-chuka-dev-tls

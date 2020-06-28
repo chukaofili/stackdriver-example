@@ -6,20 +6,20 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: nodejs-guestbook-mongodb
+  name: stackdriver-example-mongodb
   labels:
-    app: nodejs-guestbook
+    app: stackdriver-example
     tier: db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodejs-guestbook
+      app: stackdriver-example
       tier: db
   template:
     metadata:
       labels:
-        app: nodejs-guestbook
+        app: stackdriver-example
         tier: db
     spec:
       containers:

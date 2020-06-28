@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-guestbook-backend
+  name: stackdriver-example-backend
   labels:
-    app: nodejs-guestbook
+    app: stackdriver-example
     tier: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodejs-guestbook
+      app: stackdriver-example
       tier: backend
   template:
     metadata:
       labels:
-        app: nodejs-guestbook
+        app: stackdriver-example
         tier: backend
     spec:
      initContainers:
@@ -22,10 +22,10 @@ spec:
         image: mongo:4
         command: ['/bin/sh', '-c']
         args:
-          - echo "Waiting for mongodb to start...";until (mongo --host nodejs-guestbook-mongodb:27017 >/dev/null 2>&1) do echo "Waiting for connection for 2 sec."; sleep 2; done
+          - echo "Waiting for mongodb to start...";until (mongo --host stackdriver-example-mongodb:27017 >/dev/null 2>&1) do echo "Waiting for connection for 2 sec."; sleep 2; done
      containers:
       - name: backend
-        image: nodejs-guestbook-backend
+        image: stackdriver-example-backend
         ports:
         - name: http-server
           containerPort: 8080
@@ -33,4 +33,4 @@ spec:
         - name: PORT
           value: "8080"
         - name: GUESTBOOK_DB_ADDR
-          value: "nodejs-guestbook-mongodb:27017"
+          value: "stackdriver-example-mongodb:27017"
