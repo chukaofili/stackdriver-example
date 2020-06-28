@@ -6,7 +6,7 @@ metadata:
   labels:
     app: stackdriver-example
     tier: backend
-  name: stackdriver-example
+  name: stackdriver-example-backend
 spec:
   rules:
   - host: guestbook-be.learn.chuka.dev
