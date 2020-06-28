@@ -17,6 +17,15 @@ require('@google-cloud/trace-agent').start({
   }
 });
 
+const ErrorReporting = require('@google-cloud/error-reporting').ErrorReporting;
+global.GoogleErrors = new ErrorReporting({
+  reportMode: 'always',
+  serviceContext: {
+    service: `${name}-${enviroment}`,
+    version: version
+  }
+});
+
 const express = require('express')
 const app = express()
 const routes = require('./routes')
@@ -24,6 +33,11 @@ const PORT = process.env.PORT
 const messages = require('./routes/messages')
 
 app.use('/', routes)
+app.use(function (err, req, res, next) {
+  console.error(err.stack)
+  GoogleErrors.report(err)
+  res.status(500).send(err.message)
+})
 
 // Application will fail if environment variables are not set
 if (!process.env.PORT) {
