@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
   labels:
     app: stackdriver-example
     tier: frontend
@@ -16,7 +17,7 @@ spec:
           serviceName: stackdriver-example-frontend
           servicePort: 8080
         path: /
-  # tls:
-  # - hosts:
-  #   - guestbook.learn.chuka.dev
-  #   secretName: guestbook-learn-chuka-dev-tls
+  tls:
+  - hosts:
+    - guestbook.learn.chuka.dev
+    secretName: guestbook-learn-chuka-dev-tls
