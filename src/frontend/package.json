@@ -1,6 +1,6 @@
 {
   "name": "stackdriver-frontend",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "stackdriver frontend",
   "main": "app.js",
   "scripts": {
