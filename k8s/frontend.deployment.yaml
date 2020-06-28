@@ -24,6 +24,8 @@ spec:
         - name: http-server
           containerPort: 8080
         env:
+        - name: NODE_ENV
+          value: production
         - name: PORT
           value: "8080"
         - name: GUESTBOOK_API_ADDR
