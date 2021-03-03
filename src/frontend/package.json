@@ -14,7 +14,7 @@
     "express": "4.17.1",
     "moment": "2.26.0",
     "nodemon": "^2.0.4",
-    "pug": "3.0.0"
+    "pug": "3.0.1"
   },
   "dependencies": {
     "@google-cloud/debug-agent": "^5.1.0",
